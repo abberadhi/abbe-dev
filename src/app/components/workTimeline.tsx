@@ -1,8 +1,3 @@
-import Image from "next/image";
-import creatorPicture from "@public/photo_1.jpg";
-import linkedInLogo from "@public/icons/linkedin.svg";
-import githubLogo from "@public/icons/github.svg";
-
 export const WorkTimeline = () => {
   const exp = [
     {
@@ -10,7 +5,7 @@ export const WorkTimeline = () => {
       period: "2022 - 2024",
       role: "Software Developer",
       description: (
-        <ol className="ml-4 text-base font-normal list-disc  ">
+        <ol className="ml-4 text-base font-normal list-disc">
           <li>Developed a testing tool to improve quality assurance.</li>
           <li>
             Built REST APIs with Spring Boot to deliver dynamic data to a web
@@ -49,7 +44,7 @@ export const WorkTimeline = () => {
         <>
           <ol className="ml-4 text-base font-normal list-disc">
             <li>
-              Bachelor's thesis:{" "}
+              Bachelor&apos;s thesis:{" "}
               <a
                 href="https://www.diva-portal.org/smash/get/diva2:1676749/FULLTEXT02.pdf"
                 target="_blank"
@@ -67,11 +62,11 @@ export const WorkTimeline = () => {
   ];
 
   return (
-    <ol className="relative border-s border-gray-200 dark:border-gray-700">
-      {exp.map((job) => {
+    <ol className="relative border-s border-gray-500">
+      {exp.map((job, i) => {
         return (
-          <li className="mb-6 ms-4">
-            <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white border-gray-900 bg-gray-700"></div>
+          <li key={i} className="mb-6 ms-4">
+            <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-gray-900 bg-gray-700"></div>
             <div className="flex justify-between items-center">
               <h3 className="text-lg font-semibold text-white">{job.role}</h3>
               <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
