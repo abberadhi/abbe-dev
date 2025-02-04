@@ -4,9 +4,9 @@ import { TitlePageBreak } from "./title-page-break";
 
 export const AboutMe = () => {
   return (
-    <article className="p-12 bg-transparent mx-auto lg:px-8">
+    <article className="px-12 bg-transparent mx-auto lg:px-8">
       <TitlePageBreak title="About me"></TitlePageBreak>
-      <div className="max-w-4xl my-12 mx-auto flex items-start align-center justify-center">
+      <div className="max-w-4xl my-12 mx-auto flex flex-col md:items-start align-center justify-center md:flex-row">
         <div className="flex-1 flex justify-center">
           <Image
             src={mePicture}
@@ -17,7 +17,7 @@ export const AboutMe = () => {
             className="rounded border-2 border-[#d1716b]"
           />
         </div>
-        <div className="text-lg p-4 flex-1 flex">
+        <div className="text-lg flex-1 flex">
           <p>
             I’m Abbas Radhi, a developer from Sweden with a degree in Software
             Development and over two years of experience. I’ve worked on both
