@@ -19,11 +19,11 @@ export const AboutMe = () => {
         </div>
         <div className="text-lg flex-1 flex mt-4 md:mt-0">
           <p>
-            I’m Abbas Radhi, a developer from Sweden with a degree in Software
-            Development and over two years of experience. I’ve worked on both
-            frontend and backend development and enjoy solving problems and
-            learning new things. I’m always eager to grow and contribute to
-            meaningful projects.
+            I’m Abbas Radhi (often referred as "Abbe"), a developer from Sweden
+            with a degree in Software Development and over two years of
+            experience. I’ve worked on both frontend and backend development and
+            enjoy solving problems and learning new things. I’m always eager to
+            grow and contribute to meaningful projects.
           </p>
         </div>
       </div>
