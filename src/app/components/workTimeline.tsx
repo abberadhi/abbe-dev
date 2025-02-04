@@ -9,8 +9,8 @@ export const WorkTimeline = () => {
       company: "Ericsson AB",
       period: "2022 - 2024",
       role: "Software Developer",
-      description: () => (
-        <ol className="ml-4 text-base font-normal list-disc text-gray-500 ">
+      description: (
+        <ol className="ml-4 text-base font-normal list-disc  ">
           <li>Developed a testing tool to improve quality assurance.</li>
           <li>
             Built REST APIs with Spring Boot to deliver dynamic data to a web
@@ -26,10 +26,10 @@ export const WorkTimeline = () => {
     },
     {
       company: "Blekinge Institute of Technology",
-      period: "2020 - 2022",
+      period: "2020 - 2021",
       role: "Teacher Assistant",
-      description: () => (
-        <ol className="ml-4 text-base font-normal list-disc text-gray-500 dark:text-gray-400">
+      description: (
+        <ol className="ml-4 text-base font-normal list-disc">
           <li>
             Support teaching and help students achieve their academic goals.
             Grade assignments and provide constructive feedback to students.
@@ -45,9 +45,9 @@ export const WorkTimeline = () => {
       company: "Blekinge Institute of Technology",
       period: "2019 - 2022",
       role: "Bachelor's degree in Software Development",
-      description: () => (
+      description: (
         <>
-          <ol className="ml-4 text-base font-normal list-disc text-gray-500 dark:text-gray-400">
+          <ol className="ml-4 text-base font-normal list-disc">
             <li>
               Bachelor's thesis:{" "}
               <a
@@ -72,12 +72,14 @@ export const WorkTimeline = () => {
         return (
           <li className="mb-6 ms-4">
             <div className="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white border-gray-900 bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              {job.period}
-            </time>
-            <h3 className="text-lg font-semibold text-white">{job.role}</h3>
+            <div className="flex justify-between items-center">
+              <h3 className="text-lg font-semibold text-white">{job.role}</h3>
+              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                {job.period}
+              </time>
+            </div>
             <h4 className="text-sm text-gray-300">{job.company}</h4>
-            {job.description()}
+            <div className="text-gray-400">{job.description}</div>
           </li>
         );
       })}

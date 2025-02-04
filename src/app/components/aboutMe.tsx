@@ -17,7 +17,7 @@ export const AboutMe = () => {
             className="rounded border-2 border-[#d1716b]"
           />
         </div>
-        <div className="text-lg flex-1 flex">
+        <div className="text-lg flex-1 flex mt-4 md:mt-0">
           <p>
             I’m Abbas Radhi, a developer from Sweden with a degree in Software
             Development and over two years of experience. I’ve worked on both
