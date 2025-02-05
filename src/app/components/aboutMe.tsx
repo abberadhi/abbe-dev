@@ -14,7 +14,7 @@ export const AboutMe = () => {
             placeholder="blur"
             width={250}
             height={250}
-            className="rounded border-2 border-[#d1716b]"
+            className="rounded border-2 border-[#d1716b] w-full md:max-w-fit"
           />
         </div>
         <div className="text-lg flex-1 flex mt-4 md:mt-0">

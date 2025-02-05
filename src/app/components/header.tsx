@@ -22,21 +22,33 @@ export const Header = () => {
           />
         </div>
       </div>
-      <div className="flex mt-4">
-        <Image
-          src={linkedInLogo}
-          alt="LinkedIn"
-          className="invert"
-          width={50}
-          height={50}
-        />
-        <Image
-          src={githubLogo}
-          alt="GitHub"
-          className="invert"
-          width={40}
-          height={40}
-        />
+      <div className="flex mt-4 items-center">
+        <a
+          href="https://www.linkedin.com/in/abbas-radhi-8986211b5/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src={linkedInLogo}
+            alt="LinkedIn"
+            className="invert"
+            width={50}
+            height={50}
+          />
+        </a>
+        <a
+          href="https://github.com/abberadhi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src={githubLogo}
+            alt="GitHub"
+            className="invert"
+            width={40}
+            height={40}
+          />
+        </a>
       </div>
     </header>
   );
