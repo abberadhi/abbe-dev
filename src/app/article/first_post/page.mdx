@@ -1,3 +1,4 @@
+
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading
@@ -91,13 +92,22 @@ Indented code
 
 Block code "fences"
 
-```
-Sample text here...
-```
+
 
 Syntax highlighting
 
-```js
+css
+```css
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-md;
+  }
+}
+```
+
+js
+
+```javascript
 var foo = function (bar) {
   return bar++;
 };
@@ -105,6 +115,54 @@ var foo = function (bar) {
 console.log(foo(5));
 ```
 
+
+```javascript
+module.exports = {
+  env: {
+    browser: true,
+    es2020: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended'
+  ],
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 11,
+    sourceType: 'module'
+  },
+  plugins: ['react', 'jest'],
+  rules: {
+    'react/prop-types': 0
+  },
+  overrides: [
+    {
+      files: ['scripts/*', '.eslintrc.js', 'babel.config.js'],
+      env: {
+        node: true
+      }
+    }
+  ]
+};
+```
+
+```python
+# This program adds two numbers
+
+num1 = 1.5
+num2 = 6.3
+
+# Add two numbers
+sum = num1 + num2
+
+# Display the sum
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+```
 
 
 ## Links

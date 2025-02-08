@@ -44,12 +44,22 @@ const myComponents: MDXComponents = {
     </blockquote>
   ),
 
-  pre: ({ children }) => (
-    <pre className="bg-gray-800 p-4 my-4 rounded">{children}</pre>
+  pre: ({ children, ...props }) => (
+    <pre
+      style={{ background: "#1F2937", borderRadius: "8px" }}
+      className="bg-gray-800 my-12"
+      {...props}
+    >
+      {children}
+    </pre>
   ),
 
-  code: ({ children }) => (
-    <code className="bg-gray-800 text-sm p-1 rounded font-mono">
+  code: ({ children, ...props }) => (
+    <code
+      style={{ background: "#1F2937", borderRadius: "8px", fontSize: "1rem" }}
+      className="bg-gray-800 my-4"
+      {...props}
+    >
       {children}
     </code>
   ),
