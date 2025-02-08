@@ -19,13 +19,15 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`w-full fixed flex items-center flex-wrap ${
+      className={`w-full fixed top-0 flex items-center flex-wrap ${
         scrolling ? "bg-black" : "bg-transparent"
       } p-6 gap-x-12 transition-colors duration-300`}
     >
-      <span className="font-semibold text-xl tracking-tight">
-        &lt; Abbe /&gt;
-      </span>
+      <p>
+        <span className="font-semibold text-xl tracking-tight">
+          &lt; Abbe /&gt;
+        </span>
+      </p>
       <div className="">
         <ol className="flex flex-row gap-4">
           <li>Home</li>
