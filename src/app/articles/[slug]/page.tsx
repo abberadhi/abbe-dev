@@ -2,10 +2,10 @@ import fs from "fs/promises";
 import path from "path";
 
 import dynamic from "next/dynamic";
-import { getBlogPostMetadata } from "../_lib/getBlogPostData";
 
 import type { Metadata } from "next/types";
-type BlogPageProps = { params: { slug: string } };
+import { getBlogPostMetadata } from "../_lib/getBlogPostData";
+type BlogPageProps = { params: Promise<{ slug: string }> };
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { slug } = await params;
@@ -20,7 +20,6 @@ export default async function BlogPage({ params }: BlogPageProps) {
 export async function generateStaticParams() {
   const articlesPath = path.join(process.cwd(), "/src/app/mdx-articles");
   const files = await fs.readdir(articlesPath);
-
   return files
     .filter((file) => file.endsWith(".mdx"))
     .map((file) => ({
@@ -37,6 +36,6 @@ export async function generateMetadata({
   if (metadata) {
     return metadata;
   } else {
-    throw new Error(`No metadata found for blog post: ${params.slug}`);
+    throw new Error(`No metadata found for blog post: ${slug}`);
   }
 }

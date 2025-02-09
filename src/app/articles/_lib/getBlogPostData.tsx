@@ -29,8 +29,12 @@ export async function getBlogPostMetadata(slug: string): Promise<BlogPostData> {
     } else {
       throw new Error(`Unable to find metadata for ${slug}.mdx`);
     }
-  } catch (error: any) {
-    console.error(error?.message);
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error?.message);
+    } else {
+      console.error(error);
+    }
     return notFound();
   }
 }
