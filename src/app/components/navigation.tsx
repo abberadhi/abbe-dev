@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const Navigation = () => {
@@ -19,19 +20,23 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 flex items-center flex-wrap ${
+      className={`w-full z-10 fixed top-0 flex items-center flex-wrap ${
         scrolling ? "bg-[#13171a]" : "bg-transparent"
       } p-6 gap-x-12 transition-colors duration-300`}
     >
       <p>
-        <span className="font-semibold text-xl tracking-tight">
+        <span className="select-none font-semibold text-xl tracking-tight">
           &lt; Abbe /&gt;
         </span>
       </p>
       <div className="">
         <ol className="flex flex-row gap-4">
-          <li>Home</li>
-          <li>Articles</li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/articles">Articles</Link>
+          </li>
         </ol>
       </div>
     </nav>
