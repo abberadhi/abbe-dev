@@ -9,8 +9,6 @@ export default async function ArticlePage() {
   return (
     <div className="max-w-4xl m-auto my-24 text-lg p-4">
       <TitlePageBreak title="Articles"></TitlePageBreak>
-      {/* <h1 className="text-3xl mt-12 font-semibold">My Blog Posts</h1>
-      {posts[0].slug} */}
       <div className="flex flex-col gap-4 my-8">
         {posts.map((post, index) => (
           <Link key={index} href={`articles/` + post.slug}>

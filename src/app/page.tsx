@@ -1,6 +1,7 @@
 import { Header } from "./components/header";
 import { AboutMe } from "./components/aboutMe";
 import { MyJourney } from "./components/myJourney";
+import ArticlePage from "./articles/page";
 
 export default function Home() {
   return (
