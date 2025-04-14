@@ -1,15 +1,7 @@
+import { BlogPostData } from "@/app/types/articleData";
+import { readdir } from "fs/promises";
 import { notFound } from "next/navigation";
-
-export type BlogPostMetadata = {
-  title: string;
-  description: string;
-  date?: string;
-};
-
-export type BlogPostData = {
-  slug: string;
-  metadata: BlogPostMetadata;
-};
+import path from "path";
 
 export async function getBlogPostMetadata(slug: string): Promise<BlogPostData> {
   try {
@@ -20,7 +12,7 @@ export async function getBlogPostMetadata(slug: string): Promise<BlogPostData> {
         throw new Error(`Missing some required metadata fields in: ${slug}`);
       }
 
-      file.metadata.title = file.metadata.title + " | < Abbe />";
+      file.metadata.title = file.metadata.title;
 
       return {
         slug,
@@ -38,3 +30,17 @@ export async function getBlogPostMetadata(slug: string): Promise<BlogPostData> {
     return notFound();
   }
 }
+
+export const getPostsMetaData = async () => {
+  const posts: BlogPostData[] = [];
+  const articlesPath = path.join(process.cwd(), "/src/app/mdx-articles");
+
+  const files = await readdir(articlesPath);
+
+  for (const fileName of files) {
+    const metadata = await getBlogPostMetadata(fileName.split(".")[0]);
+    posts.push(metadata);
+  }
+
+  return posts;
+};
